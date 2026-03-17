@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import WhySection from '../components/WhySection.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Changelog from '../components/Changelog.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="WP Manager Pro — Complete WordPress Control Panel"
+  description="Replace 10+ separate admin plugins with a single, fast, React-powered interface. Plugin manager, database tools, file manager, security scanner, and more — all in one place."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <Features />
+    <WhySection />
+    <HowItWorks />
+    <Changelog />
+  </main>
+  <Footer />
+</Layout>

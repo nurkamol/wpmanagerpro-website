@@ -1,0 +1,159 @@
+---
+const comparisonRows = [
+  {
+    aspect: 'Plugins needed',
+    without: '8–12 separate plugins',
+    with: '1',
+  },
+  {
+    aspect: 'Admin pages',
+    without: 'Scattered across WP menu',
+    with: 'Single unified panel',
+  },
+  {
+    aspect: 'Performance',
+    without: 'Bloat from multiple plugins',
+    with: 'Lightweight React SPA',
+  },
+  {
+    aspect: 'Updates',
+    without: 'Manage each separately',
+    with: 'Central update hub',
+  },
+  {
+    aspect: 'Learning curve',
+    without: 'Different UI for each tool',
+    with: 'One consistent interface',
+  },
+];
+---
+
+<section id="why" class="py-24 sm:py-32" style="background-color: #f8fafc;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 text-slate-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
+      >
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        The Case for WP Manager Pro
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+        Why WP Manager Pro?
+      </h2>
+      <p class="max-w-xl mx-auto text-lg text-slate-500 leading-relaxed">
+        Stop juggling a dozen plugins. Manage your entire WordPress site from one powerful panel.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Left: copy -->
+      <div class="space-y-8">
+        <div class="space-y-6">
+          {
+            [
+              {
+                icon: '⚡',
+                title: 'React-powered speed',
+                body: 'Built as a single-page React application, WP Manager Pro feels instant. No full-page reloads — navigate between tools at the speed of thought.',
+              },
+              {
+                icon: '🎯',
+                title: 'Built for agencies',
+                body: 'White-label the login page, generate client reports, intercept emails in staging, and manage multiple aspects of a site without context-switching.',
+              },
+              {
+                icon: '🧹',
+                title: 'Declutter your WP Admin',
+                body: 'Eliminate the sprawl. Replace Wordfence, WP-DBManager, Filester, WP Crontrol, and 8+ other plugins with a single, well-maintained codebase.',
+              },
+              {
+                icon: '🔓',
+                title: 'Free and open-source',
+                body: "No licensing fees, no upsells, no SaaS subscriptions. WP Manager Pro is GPL-2.0 licensed and maintained transparently on GitHub.",
+              },
+            ].map((item) => (
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-xl">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p class="text-sm text-slate-500 leading-relaxed">{item.body}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Right: comparison table -->
+      <div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+          <!-- Table header -->
+          <div class="grid grid-cols-3 bg-slate-900 text-sm font-semibold">
+            <div class="px-5 py-3.5 text-slate-400"></div>
+            <div class="px-4 py-3.5 text-slate-300 border-l border-slate-700 text-center">
+              Without
+            </div>
+            <div
+              class="px-4 py-3.5 text-blue-300 border-l border-slate-700 text-center font-bold"
+            >
+              With WP Manager Pro
+            </div>
+          </div>
+
+          <!-- Table rows -->
+          {
+            comparisonRows.map((row, i) => (
+              <div
+                class={`grid grid-cols-3 border-t border-slate-100 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/60'}`}
+              >
+                <div class="px-5 py-4 font-semibold text-slate-700 text-xs leading-snug">
+                  {row.aspect}
+                </div>
+                <div class="px-4 py-4 text-slate-400 border-l border-slate-100 text-xs text-center leading-snug">
+                  {row.without}
+                </div>
+                <div class="px-4 py-4 text-slate-900 border-l border-slate-100 text-xs text-center font-semibold leading-snug flex items-center justify-center gap-1.5">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-green-500 flex-shrink-0"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  {row.with}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Footnote -->
+        <p class="mt-4 text-xs text-slate-400 text-center leading-relaxed">
+          Comparison based on typical WordPress agency setups using popular free plugins.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

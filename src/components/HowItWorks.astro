@@ -1,0 +1,129 @@
+---
+const RELEASES_URL = 'https://github.com/nurkamol/wp-manager-pro/releases/latest';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Download',
+    description:
+      'Grab the latest release ZIP from GitHub. No accounts, no registration — just a clean ZIP file ready to go.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+    cta: { label: 'Get latest release →', href: RELEASES_URL },
+  },
+  {
+    number: '02',
+    title: 'Install',
+    description:
+      'In your WordPress admin, go to Plugins → Add New → Upload Plugin. Select the ZIP, click Install Now, then Activate.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    cta: null,
+  },
+  {
+    number: '03',
+    title: 'Manage',
+    description:
+      'Click "WP Manager" in your admin sidebar and you\'re in. The full control panel loads instantly in your browser.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,
+    cta: null,
+  },
+];
+---
+
+<section id="how-it-works" class="py-24 sm:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
+      >
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Quick Setup
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+        Up and running in <span class="text-green-600">60 seconds</span>
+      </h2>
+      <p class="max-w-xl mx-auto text-lg text-slate-500 leading-relaxed">
+        No configuration wizards, no API keys, no complex setup. Just download, install, and go.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative">
+      <!-- Connecting line (desktop) -->
+      <div
+        class="hidden lg:block absolute top-[52px] left-[calc(16.67%+32px)] right-[calc(16.67%+32px)] h-px bg-gradient-to-r from-slate-200 via-blue-200 to-slate-200"
+      >
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
+        {
+          steps.map((step, i) => (
+            <div class="relative flex flex-col items-center text-center lg:items-center">
+              <!-- Step number + icon circle -->
+              <div class="relative mb-6">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-xl shadow-blue-600/25 text-white">
+                  <Fragment set:html={step.icon} />
+                </div>
+                <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-900 text-white text-xs font-black flex items-center justify-center border-2 border-white">
+                  {i + 1}
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                <p class="text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
+                  {step.description}
+                </p>
+                {step.cta && (
+                  <a
+                    href={step.cta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block mt-4 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-200"
+                  >
+                    {step.cta.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Requirements bar -->
+    <div
+      class="mt-16 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-slate-500"
+    >
+      <span class="font-semibold text-slate-700 text-xs uppercase tracking-wider">
+        Requirements
+      </span>
+      {
+        [
+          { icon: '🌐', label: 'WordPress 5.9 or higher' },
+          { icon: '🐘', label: 'PHP 7.4 or higher' },
+          { icon: '🔑', label: 'Administrator role' },
+          { icon: '🪝', label: 'REST API enabled' },
+        ].map((req) => (
+          <span class="flex items-center gap-2">
+            <span>{req.icon}</span>
+            {req.label}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,161 @@
+---
+const features = [
+  {
+    emoji: '🔌',
+    title: 'Plugin Manager',
+    description:
+      'Install, activate, deactivate, update, and delete plugins. Search WordPress.org directly from your control panel.',
+    color: 'blue',
+  },
+  {
+    emoji: '🎨',
+    title: 'Theme Manager',
+    description:
+      'Browse, install, activate, and delete themes without leaving the panel. Preview before switching.',
+    color: 'purple',
+  },
+  {
+    emoji: '📁',
+    title: 'File Manager',
+    description:
+      'Browse and edit files directly. Syntax-aware code editor for PHP, JavaScript, CSS, and more.',
+    color: 'amber',
+  },
+  {
+    emoji: '🗄️',
+    title: 'Database Manager',
+    description:
+      'Browse tables, run SQL queries, and perform search & replace with full serialized data support.',
+    color: 'teal',
+  },
+  {
+    emoji: '🛡️',
+    title: 'Security Scanner',
+    description:
+      'Scan for malware patterns, inspect suspicious files, quarantine or delete threats with one click.',
+    color: 'red',
+  },
+  {
+    emoji: '🔒',
+    title: 'Security Suite',
+    description:
+      'Login limiter, IP blocklist, 2FA (TOTP), XML-RPC control, and file integrity monitoring.',
+    color: 'orange',
+  },
+  {
+    emoji: '🧰',
+    title: 'Agency Tools',
+    description:
+      'White-label login page, coming soon mode, client report generator, and mail interceptor.',
+    color: 'violet',
+  },
+  {
+    emoji: '⚡',
+    title: 'Performance',
+    description:
+      'DB cleanup, transient manager, object cache status, Redis browser, and caching controls.',
+    color: 'yellow',
+  },
+  {
+    emoji: '🕐',
+    title: 'Cron Manager',
+    description:
+      'Browse scheduled events, trigger manually, add custom schedules, and monitor cron health.',
+    color: 'cyan',
+  },
+  {
+    emoji: '👥',
+    title: 'User Manager',
+    description:
+      'List users, change roles, and login-as any user with safe impersonation. Full audit control.',
+    color: 'pink',
+  },
+  {
+    emoji: '🛠️',
+    title: 'Debug Tools',
+    description:
+      'Toggle WP_DEBUG flags, view error logs live, and get a full system info overview at a glance.',
+    color: 'slate',
+  },
+  {
+    emoji: '🖼️',
+    title: 'Image Tools',
+    description:
+      'WebP/AVIF conversion toggle, bulk thumbnail regeneration, JPEG quality and compression settings.',
+    color: 'green',
+  },
+];
+
+const colorMap: Record<string, string> = {
+  blue: 'bg-blue-50 border-blue-100 group-hover:border-blue-200',
+  purple: 'bg-purple-50 border-purple-100 group-hover:border-purple-200',
+  amber: 'bg-amber-50 border-amber-100 group-hover:border-amber-200',
+  teal: 'bg-teal-50 border-teal-100 group-hover:border-teal-200',
+  red: 'bg-red-50 border-red-100 group-hover:border-red-200',
+  orange: 'bg-orange-50 border-orange-100 group-hover:border-orange-200',
+  violet: 'bg-violet-50 border-violet-100 group-hover:border-violet-200',
+  yellow: 'bg-yellow-50 border-yellow-100 group-hover:border-yellow-200',
+  cyan: 'bg-cyan-50 border-cyan-100 group-hover:border-cyan-200',
+  pink: 'bg-pink-50 border-pink-100 group-hover:border-pink-200',
+  slate: 'bg-slate-50 border-slate-200 group-hover:border-slate-300',
+  green: 'bg-green-50 border-green-100 group-hover:border-green-200',
+};
+---
+
+<section id="features" class="py-24 sm:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
+      >
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+          ></polygon>
+        </svg>
+        12 Powerful Modules
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+        Everything your site needs,<br class="hidden sm:block" />
+        <span class="text-blue-600">in one place</span>
+      </h2>
+      <p class="max-w-2xl mx-auto text-lg text-slate-500 leading-relaxed">
+        WP Manager Pro bundles a full suite of professional WordPress tools into a single,
+        blazing-fast React interface. No more plugin sprawl.
+      </p>
+    </div>
+
+    <!-- Features grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        features.map((feature) => (
+          <div
+            class={`group relative rounded-2xl border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${colorMap[feature.color] || colorMap.slate}`}
+          >
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-white shadow-sm border border-white/80 flex items-center justify-center text-2xl">
+                {feature.emoji}
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">
+                  {feature.title}
+                </h3>
+                <p class="text-sm text-slate-500 leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
