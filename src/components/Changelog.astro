@@ -4,38 +4,42 @@ const GITHUB_RELEASES = 'https://github.com/nurkamol/wp-manager-pro/releases';
 
 const releases = [
   {
-    version: 'v2.9.4',
-    date: '2026-03-18',
+    version: 'v3.1.0',
+    date: '2026-03-19',
     badge: 'Latest',
     badgeColor: 'blue',
+    changes: [
+      'Plugin Health Check — new tab on Plugins page auditing every installed plugin',
+      'Flags abandoned plugins (no update in 2+ years) via WordPress.org API',
+      'Detects WP version incompatibility and low ratings (<3★)',
+      'Shows known CVEs with CVSS scores via WPScan API integration',
+      'Results cached 24h server-side with manual Re-scan option',
+    ],
+  },
+  {
+    version: 'v3.0.0',
+    date: '2026-03-19',
+    badge: null,
+    badgeColor: null,
+    changes: [
+      'Dark Mode Auto-Sync — follows OS prefers-color-scheme automatically',
+      'Dashboard Widgets — configurable grid with uptime ping, audit events, cache status',
+      'Notification Centre — persistent bell icon with slide-out alert panel',
+      'Mobile/Tablet Layout — bottom nav bar on mobile, auto-collapse sidebar on tablet',
+      'Global Search — live search across plugins, users, notes, audit log in Command Palette',
+      'System-wide Command Palette — WPMGR admin bar button opens overlay from anywhere',
+      'Custom Post Type Manager — register CPTs and taxonomies from the UI',
+    ],
+  },
+  {
+    version: 'v2.9.4',
+    date: '2026-03-18',
+    badge: null,
+    badgeColor: null,
     changes: [
       'Media Library modal deep root-cause fix — resolves iframe isolation issues',
       'Switched to IIFE build format for improved WordPress compatibility',
       'Eliminated all module-type script loading conflicts',
-      'Cleaned up asset enqueuing and dependency chain',
-    ],
-  },
-  {
-    version: 'v2.9.3',
-    date: '2026-03-17',
-    badge: null,
-    badgeColor: null,
-    changes: [
-      'Image Tools: fixed conversion settings persistence and toggle behavior',
-      'Malware Scanner: full inspect, quarantine, delete, and ignore actions',
-      'Sidebar environment badge completely redesigned — cleaner, smaller',
-      'UI polish across scanner results and action dialogs',
-    ],
-  },
-  {
-    version: 'v2.9.2',
-    date: '2026-03-17',
-    badge: null,
-    badgeColor: null,
-    changes: [
-      'WordPress Media Library bridge — native media picker now works inside plugin iframe',
-      'Settings branding: logo picker using native WP media selector',
-      'Fixed media picker button visibility and selection callback',
     ],
   },
 ];
@@ -170,7 +174,7 @@ const releases = [
                         <polyline points="7 10 12 15 17 10" />
                         <line x1="12" y1="15" x2="12" y2="3" />
                       </svg>
-                      Download v2.9.4
+                      Download v3.1.0
                     </a>
                   </div>
                 )}
