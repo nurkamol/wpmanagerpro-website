@@ -34,7 +34,7 @@ const steps = [
     <!-- Section header -->
     <div class="text-center mb-16">
       <div
-        class="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-5"
+        class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 text-[13px] font-semibold px-3.5 py-1.5 rounded-full mb-5"
       >
         <svg
           width="13"
@@ -52,7 +52,7 @@ const steps = [
         Quick Setup
       </div>
       <h2 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
-        Up and running in <span class="text-green-600">60 seconds</span>
+        Up and running in <span class="text-indigo-600">60 seconds</span>
       </h2>
       <p class="max-w-xl mx-auto text-lg text-slate-500 leading-relaxed">
         No configuration wizards, no API keys, no complex setup. Just download, install, and go.
@@ -63,7 +63,7 @@ const steps = [
     <div class="relative">
       <!-- Connecting line (desktop) -->
       <div
-        class="hidden lg:block absolute top-[52px] left-[calc(16.67%+32px)] right-[calc(16.67%+32px)] h-px bg-gradient-to-r from-slate-200 via-blue-200 to-slate-200"
+        class="hidden lg:block absolute top-[52px] left-[calc(16.67%+32px)] right-[calc(16.67%+32px)] h-px bg-gradient-to-r from-slate-200 via-indigo-200 to-slate-200"
       >
       </div>
 
@@ -73,7 +73,7 @@ const steps = [
             <div class="relative flex flex-col items-center text-center lg:items-center">
               <!-- Step number + icon circle -->
               <div class="relative mb-6">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-xl shadow-blue-600/25 text-white">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-700 flex items-center justify-center shadow-xl shadow-indigo-600/25 text-white">
                   <Fragment set:html={step.icon} />
                 </div>
                 <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-900 text-white text-xs font-black flex items-center justify-center border-2 border-white">
@@ -92,7 +92,7 @@ const steps = [
                     href={step.cta.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-block mt-4 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-200"
+                    class="inline-block mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors duration-200"
                   >
                     {step.cta.label}
                   </a>
